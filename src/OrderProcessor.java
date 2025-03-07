@@ -1,5 +1,5 @@
 public class OrderProcessor {
-    private NotificationService notificationService;
+    private final NotificationService notificationService;
 
     public OrderProcessor(NotificationService notificationService) {
         this.notificationService = notificationService;

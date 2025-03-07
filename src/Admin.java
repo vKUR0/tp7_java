@@ -1,5 +1,5 @@
 public class Admin implements ReviewActions, AdminActions {
-    private BookStore bookStore;
+    private final BookStore bookStore;
 
     public Admin(BookStore bookStore) {
         this.bookStore = bookStore;
