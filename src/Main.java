@@ -4,8 +4,8 @@ public class Main {
         NotificationService notificationService = new EmailNotificationService();
         OrderProcessor orderProcessor = new OrderProcessor(notificationService);
 
-        Book physicalBook = new PhysicalBook("The Java Handbook", 29.99);
-        Book ebook = new EBook("Advanced Java Topics", 19.99);
+        abstractBook physicalBook = new PhysicalBook("The Java Handbook", 29.99);
+        abstractBook ebook = new EBook("Advanced Java Topics", 19.99);
 
         bookstore.addBook(physicalBook);
         bookstore.addBook(ebook);

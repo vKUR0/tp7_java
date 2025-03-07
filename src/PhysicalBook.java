@@ -1,4 +1,4 @@
-public class PhysicalBook extends Book {
+public class PhysicalBook extends abstractBook {
     public PhysicalBook(String title, double price) {
         super(title, price);
     }

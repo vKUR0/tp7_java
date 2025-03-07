@@ -11,7 +11,7 @@ public class Admin implements ReviewActions, AdminActions {
     }
 
     @Override
-    public void addBookToStore(Book book) {
+    public void addBookToStore(abstractBook book) {
         bookStore.addBook(book);
     }
 

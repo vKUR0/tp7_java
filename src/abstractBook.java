@@ -1,8 +1,8 @@
-public abstract class Book {
+public abstract class abstractBook {
     protected String title;
     protected double price;
 
-    public Book(String title, double price) {
+    public abstractBook(String title, double price) {
         this.title = title;
         this.price = price;
     }
