@@ -1,13 +1,24 @@
 public class Main {
     public static void main(String[] args) {
         BookStore bookstore = new BookStore();
-        bookstore.addBook("The Java Handbook", "PHYSICAL", 29.99);
-        bookstore.processOrder("The Java Handbook", "user@example.com");
+        NotificationService notificationService = new EmailNotificationService();
+        OrderProcessor orderProcessor = new OrderProcessor(notificationService);
+
+        Book physicalBook = new PhysicalBook("The Java Handbook", 29.99);
+        Book ebook = new EBook("Advanced Java Topics", 19.99);
+
+        bookstore.addBook(physicalBook);
+        bookstore.addBook(ebook);
+
+        orderProcessor.processOrder(physicalBook, "user@example.com");
+
         Customer customer = new Customer();
         customer.borrowBook("The Java Handbook");
         customer.returnBook("The Java Handbook");
-        customer.reviewBook("The Java Handbook", "Great book for beginners!");
-        Admin admin = new Admin();
+        customer.reviewBook("The Java Handbook", "Great book!");
+
+        Admin admin = new Admin(bookstore);
+        admin.addBookToStore(new AudioBook("Java Audio Guide", 15.99));
         admin.reviewBook("Advanced Java Topics", "Excellent depth!");
     }
 }
